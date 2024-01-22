@@ -2,9 +2,7 @@ package Google;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.SearchPage;
 import utils.ReadTestDataFromExcelFile;
 import static org.testng.Assert.assertTrue;
@@ -18,7 +16,7 @@ public class GoogleSearchTests {
     ReadTestDataFromExcelFile fileReader;
 
 
-    @BeforeTest
+    @BeforeMethod
     public void BaseCase() {
         // System.setProperty("webDriver.chrome.driver","resources/chromedriver.exe");
         driver = new ChromeDriver();
@@ -53,8 +51,8 @@ public class GoogleSearchTests {
         assertTrue(Searches.IsEnableLink());
     }
 
-    @AfterTest
-    public void Closebrowser(){
-        driver.quit();
+    @AfterMethod
+    public void TheClosebrowser(){
+        driver.close();
     }
 }

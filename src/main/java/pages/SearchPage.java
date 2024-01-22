@@ -26,7 +26,7 @@ public class SearchPage extends ActionsMethods{
 
     public void SearchWithTextForImage(String text) {
         setText(searchTextFiled,text);
-        waitElementVisability(ImageButton,120);
+        waitElementVisability(ImageButton,180);
         clickLink(ImageButton);
 
 
